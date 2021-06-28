@@ -1,21 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
-import logo from '../../assets/shapla-logo.png';
 
 const Navbar = () => (
   <nav>
     <ul className="nav-list">
       <li className="nav-list__item">
-        <Link to="/">
-          <img className="logo" src={logo} alt="logo" />
+        <Link className="logo" to="/">
+          nonomo
         </Link>
       </li>
       <li className="nav-list__item">
         <ul className="nav-nested-list">
-          <Link className="nav-nested-list__item" to="/">About</Link>
-          <Link className="nav-nested-list__item" to="/">Features</Link>
-          <Link className="nav-nested-list__item" to="/">Pricing</Link>
+          <li><Link className="nav-nested-list__item" to="/">About</Link></li>
+          <li><Link className="nav-nested-list__item" to="/">Features</Link></li>
+          <li><Link className="nav-nested-list__item" to="/">Pricing</Link></li>
         </ul>
       </li>
       <li className="nav-list__item"><Link className="contactUs" to="/">Contact Us</Link></li>
