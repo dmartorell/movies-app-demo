@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
-import logo from '../../assets/leisure-logo-2.png';
+import logo from '../../assets/shapla-logo.png';
 
 const Navbar = () => (
   <nav>
-
     <ul className="nav-list">
       <li className="nav-list__item">
         <Link to="/">
