@@ -1,8 +1,12 @@
 import React from 'react';
+import HeroSection from '../HeroSection';
 import './style.scss';
 
 const Landing = () => (
-  <h1>LANDING</h1>
+  <>
+    <p>you are at landing</p>
+    <HeroSection />
+  </>
 );
 
 export default Landing;
