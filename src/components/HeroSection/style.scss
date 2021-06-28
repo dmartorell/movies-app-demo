@@ -1,3 +1,44 @@
 @import "../../styles/colors.scss";
 @import "../../styles/mixins.scss";
 
+.container {
+    @include flex-config( space-between, flex-start);
+    &__left-side {
+        @include flex-config( flex-start, flex-start, column);
+        flex: 1 1 0px;
+        .hero-title {
+            background-image: url('https://images.unsplash.com/photo-1553443236-e031f8bb39ae?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3150&q=80');
+            background-size: cover;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Roboto', sans-serif;
+            font-size: 6.5em;
+            font-weight: 900;
+            letter-spacing: 0.2rem;
+            line-height: 0.95em;
+            margin-top: 0.5em;
+            text-transform:uppercase;
+        }
+        .hero-subtitle {
+            color: $dark-primary;
+            font-size: 1.6em;
+            margin: 1em 0;
+            &__highlight {
+                color: $main-secondary;
+            }
+        }
+        .buttons {
+            @include flex-config( space-between, center);
+            gap: 1em;
+            margin: 1.2em 0;
+        }
+    }
+    &__right-side {
+        flex: 1 1 0px;
+        text-align: right;
+        .hero-image {
+            object-fit: cover;
+            max-width: 90%;
+        }  
+    }
+}

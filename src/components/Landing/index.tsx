@@ -4,7 +4,6 @@ import './style.scss';
 
 const Landing = () => (
   <>
-    <p>you are at landing</p>
     <HeroSection />
   </>
 );
