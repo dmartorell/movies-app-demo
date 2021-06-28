@@ -1,0 +1,12 @@
+.cta-btn {
+    background-color: green;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 1em;
+
+    &:hover {
+        background-color: rgb(6, 84, 6);
+    }
+}

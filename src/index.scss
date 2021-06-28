@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700;800;900&display=swap');
+@import "../src/styles/colors.scss";
+
 
 *, *::after, *::before {
   margin: 0;
@@ -13,16 +15,13 @@ html {
         
     }
     body {
-        overflow: auto;
-        height: 100%;
+      background-color: $base-background;
+      height: 100%;
+      overflow: auto;
     }
     a {
         text-decoration: none;
         color: inherit;
         cursor: pointer;
-    }
-    button {
-        border: none;
-        background-color: transparent;
     }
 }
