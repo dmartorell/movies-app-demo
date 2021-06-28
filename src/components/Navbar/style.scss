@@ -1,0 +1,42 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+nav {
+    padding: 1em 0;
+}
+.nav-list {
+    @include flex-config( space-between, center);
+    .nav-nested-list {
+        @include flex-config( space-around, center);
+        &__item {
+            font-weight: bolder;
+            border-bottom: 2px solid transparent;
+            margin: 0 3em;
+            padding: 0 0.5em;
+            transition: 200ms;
+
+
+            &:hover {
+                border-bottom: 2px solid $dark-blue;
+            }
+        }
+    }
+    .contactUs {
+        color: white;
+        font-size: 0.9em;
+        background-color: $darkest-blue;
+        padding: 0.5em 2.2em;
+        border-radius: 7px;
+        transition: 200ms;
+
+        &:hover {
+            background-color: $dark-blue;
+
+
+        }
+    }
+}
+.logo {
+    width: auto;
+    height: 50px;
+}
