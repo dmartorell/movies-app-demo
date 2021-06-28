@@ -1,13 +1,20 @@
 import React from 'react';
-import Button from './components/Button';
+// import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Landing from './components/Landing';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Movie Chair</h1>
-      <Button className="cta-btn" onClick={() => console.log('pressed!')}>TV SHOWS</Button>
-      <Button className="cta-btn" onClick={() => console.log('pressed!')}>MOVIES</Button>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <main className="main-container">
+        <Switch>
+          <Route path="/" exact component={Landing} />
+        </Switch>
+      </main>
+    </BrowserRouter>
   );
 }
 
