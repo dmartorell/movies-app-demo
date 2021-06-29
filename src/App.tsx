@@ -3,6 +3,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
+import NotFound from './components/NotFound';
+
 import './App.scss';
 
 function App() {
@@ -11,7 +13,8 @@ function App() {
       <Navbar />
       <main className="main-container">
         <Switch>
-          <Route path="/" exact component={Landing} />
+          <Route exact path="/" component={Landing} />
+          <Route component={NotFound} />
         </Switch>
       </main>
     </BrowserRouter>
