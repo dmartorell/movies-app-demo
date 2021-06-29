@@ -1,6 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-// import PopularMovies from '../../types/popularMovies';
 import './style.scss';
 import Movie from '../../types/movie';
 

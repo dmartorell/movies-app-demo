@@ -1,6 +1,6 @@
 import React, { useState, useEffect, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadMovies } from '../../redux/actions/actionCreators';
+import { loadMovies, loadTvShows } from '../../redux/actions/actionCreators';
 import Store from '../../types/store';
 import TvShowsList from '../TvShowsList';
 import MoviesList from '../MoviesList';
@@ -13,8 +13,10 @@ const HeroSection: FC = () => {
   const [tvIsSelected, setTvIsSelected] = useState(false);
   const dispatch = useDispatch();
   const movies = useSelector((store: Store) => store.popularMovies.results);
+  const tvShows = useSelector((store: Store) => store.popularTvShows.results);
 
   useEffect(() => {
+    dispatch(loadTvShows());
     dispatch(loadMovies());
   }, []);
 
@@ -80,11 +82,10 @@ const HeroSection: FC = () => {
       </section>
       {
           tvIsSelected
-            ? <TvShowsList />
+            ? <TvShowsList list={tvShows} className="movies-list" />
             : <MoviesList list={movies} className="movies-list" />
         }
     </>
-
   );
 };
 
