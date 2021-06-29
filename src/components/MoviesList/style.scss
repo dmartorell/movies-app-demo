@@ -23,8 +23,9 @@
         }
         &__info {
             @include flex-config( space-between, center, column);
+            padding: 0.5em 0 0.9em 0;
             .info-title {
-                font-size: 1em;
+                font-size: 1.1em;
                 font-weight: 400;
                 color: $white;
                 width: 150px;
@@ -33,13 +34,15 @@
                 text-overflow: ellipsis;
             }
             .info-votes {
-                font-size: 0.8em;
-                font-weight: 400;
                 color: $white;
+                font-size: 0.60em;
+                font-weight: 800;
+                letter-spacing: 0.15em;;
+                text-transform: uppercase;
             }
         }
         &:hover {
-            background-color: $bright-secondary;
+            background-color: $main-secondary;
             cursor: pointer;
         }
     }

@@ -15,7 +15,7 @@ const TvShowsList = ({ list }: {list : TvShow[] }) => {
                 <img className="list-item__image" src={`${IMAGE_URL}${item.poster_path}`} alt="list-item-pic" />
                 <div className="list-item__info">
                   <p className="info-title">{item.name}</p>
-                  <p className="info-votes">{item.vote_average}</p>
+                  <p className="info-votes">rating: {item.vote_average}</p>
                 </div>
               </li>
             ))
