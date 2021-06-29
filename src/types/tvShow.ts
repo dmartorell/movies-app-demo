@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 interface TvShow {
+
     backdrop_path: string,
     first_air_date: string,
     genre_ids: [number],
@@ -13,6 +14,7 @@ interface TvShow {
     poster_path: string,
     vote_average: number,
     vote_count: number,
+
 }
 
 export default TvShow;

@@ -82,8 +82,8 @@ const HeroSection: FC = () => {
       </section>
       {
           tvIsSelected
-            ? <TvShowsList list={tvShows} className="movies-list" />
-            : <MoviesList list={movies} className="movies-list" />
+            ? <TvShowsList list={tvShows} />
+            : <MoviesList list={movies} />
         }
     </>
   );

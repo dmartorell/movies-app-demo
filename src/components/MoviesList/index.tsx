@@ -3,19 +3,24 @@ import React from 'react';
 import './style.scss';
 import Movie from '../../types/movie';
 
-const MoviesList = ({ list, className }: {list : Movie[], className: string }) => (
-  <section className={className}>
-    <ul>
-      {
+const MoviesList = ({ list }: {list : Movie[]}) => {
+  const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
+  return (
+    <section>
+      <ul className="list">
+        {
             list?.length
             && list.map((item : any) => (
-              <li key={item.id}>
-                <p>{item.title}</p>
+              <li className="list-item" key={item.id}>
+                <img className="list-item__image" src={`${IMAGE_URL}${item.poster_path}`} alt="list-item-pic" />
+                <p className="list-item__title">{item.title}</p>
+                <p className="list-item__vote-average">{item.vote_average}</p>
               </li>
             ))
           }
-    </ul>
-  </section>
-);
+      </ul>
+    </section>
+  );
+};
 
 export default MoviesList;
