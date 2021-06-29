@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadMovies } from '../../redux/actions/actionCreators';
+import Store from '../../types/store';
+
 import Button from '../Button';
 import './style.scss';
 
-const HeroSection = () => {
+const HeroSection: FC = () => {
   const heroImage = 'https://i.ibb.co/VL959Vg/hero-image4.png';
   const [tvIsSelected, setTvIsSelected] = useState(false);
+  const dispatch = useDispatch();
+  const movies = useSelector((store: Store) => store.popularMovies);
+
+  useEffect(() => {
+    dispatch(loadMovies());
+  }, []);
 
   const toggleButton = () => {
     setTvIsSelected(!tvIsSelected);
@@ -12,6 +22,7 @@ const HeroSection = () => {
 
   const handleClick = () => {
     toggleButton();
+    console.log(movies);
   };
 
   return (
