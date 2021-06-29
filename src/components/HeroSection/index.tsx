@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect, FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadMovies } from '../../redux/actions/actionCreators';
+import Store from '../../types/store';
+
 import Button from '../Button';
 import './style.scss';
 
-const HeroSection = () => {
+const HeroSection: FC = () => {
   const heroImage = 'https://i.ibb.co/VL959Vg/hero-image4.png';
+  const [tvIsSelected, setTvIsSelected] = useState(false);
+  const dispatch = useDispatch();
+  const movies = useSelector((store: Store) => store.popularMovies);
+
+  useEffect(() => {
+    dispatch(loadMovies());
+  }, []);
+
+  const toggleButton = () => {
+    setTvIsSelected(!tvIsSelected);
+  };
+
+  const handleClick = () => {
+    toggleButton();
+    console.log(movies);
+  };
 
   return (
     <section>
@@ -19,7 +39,7 @@ const HeroSection = () => {
             higher
           </h1>
           <h3 className="hero-subtitle">
-            2000+ movies and TV Shows
+            2000+ Movies and TV Shows
             {' '}
             <br />
             to bring your
@@ -27,15 +47,33 @@ const HeroSection = () => {
             <span className="hero-subtitle__highlight"> mood back.</span>
           </h3>
           <div className="buttons">
-            <Button className="main-btn main-btn--selected" onClick={() => { console.log('hi'); }}>Movies</Button>
-            <Button className="main-btn" onClick={() => {}}>TV Shows</Button>
+            <Button
+              className={
+              tvIsSelected
+                ? 'main-btn'
+                : 'main-btn main-btn--selected'
+            }
+              disabled={!tvIsSelected}
+              onClick={handleClick}
+            >
+              Movies
+            </Button>
+            <Button
+              className={
+              tvIsSelected
+                ? 'main-btn main-btn--selected'
+                : 'main-btn'
+              }
+              disabled={tvIsSelected}
+              onClick={handleClick}
+            >
+              TV Shows
+            </Button>
           </div>
-
         </article>
         <article className="container__right-side">
           <img src={heroImage} className="hero-image" alt="shapla main ilustration" />
         </article>
-
       </div>
     </section>
   );
