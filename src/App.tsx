@@ -10,7 +10,7 @@ import './App.scss';
 
 function App() {
   return (
-    <Provider store={configureStore({ type: String })}>
+    <Provider store={configureStore({ popularMovies: String, popularTvShows: String })}>
       <BrowserRouter>
         <Navbar />
         <main className="main-container">
