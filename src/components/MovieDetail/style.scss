@@ -1,0 +1,49 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.list {
+    @include flex-config( space-between, flex-start);
+    flex-wrap: wrap;
+    margin-top: 6em;
+    gap: 2em;
+
+    .list-item {
+        flex: 1 200px;
+        background-color: $darkest-primary;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        text-align: center;
+        transition: 150ms;
+        &__image {
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+            object-fit: cover;
+            height: 300px;
+            width: 100%;
+        }
+        &__info {
+            @include flex-config( space-between, center, column);
+            padding: 0.5em 0 0.9em 0;
+            .info-title {
+                font-size: 1.1em;
+                font-weight: 400;
+                color: $white;
+                width: 165px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .info-votes {
+                color: $white;
+                font-size: 0.60em;
+                font-weight: 800;
+                letter-spacing: 0.15em;;
+                text-transform: uppercase;
+            }
+        }
+        &:hover {
+            background-color: $main-secondary;
+            cursor: pointer;
+        }
+    }
+}
