@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import './style.scss';
+import '../MoviesList/style.scss';
 import TvShow from '../../types/tvShow';
 
 const TvShowsList = ({ list }: {list : TvShow[] }) => {

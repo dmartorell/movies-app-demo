@@ -13,6 +13,7 @@
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;
         text-align: center;
+        transition: 150ms;
         &__image {
             border-top-right-radius: 15px;
             border-top-left-radius: 15px;
@@ -25,7 +26,7 @@
             .info-title {
                 font-size: 1em;
                 font-weight: 400;
-                color: white;
+                color: $white;
                 width: 150px;
                 white-space: nowrap;
                 overflow: hidden;
@@ -34,8 +35,12 @@
             .info-votes {
                 font-size: 0.8em;
                 font-weight: 400;
-                color: white;
+                color: $white;
             }
+        }
+        &:hover {
+            background-color: $bright-secondary;
+            cursor: pointer;
         }
     }
 }
