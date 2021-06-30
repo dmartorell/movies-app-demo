@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import tvShowsReducer from './tvShowsReducer';
 import moviesReducer from './moviesReducer';
-// import selectedItem from './selectedItemReducer';
+import selectedItemReducer from './selectedItemReducer';
 
 const rootReducer = combineReducers({
   popularTvShows: tvShowsReducer,
   popularMovies: moviesReducer,
-  // selectedItem: selectedItemReducer,
+  selectedItem: selectedItemReducer,
 });
 
 export default rootReducer;

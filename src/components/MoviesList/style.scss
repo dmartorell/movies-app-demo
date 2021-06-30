@@ -8,7 +8,7 @@
     gap: 2em;
 
     .list-item {
-        flex: 1 200px;
+        flex: 1 1 200px;
         background-color: $darkest-primary;
         border-top-right-radius: 25px;
         border-top-left-radius: 25px;
@@ -46,4 +46,5 @@
             cursor: pointer;
         }
     }
+    
 }

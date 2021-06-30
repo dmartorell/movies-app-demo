@@ -1,9 +1,7 @@
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import Movie from '../../types/movie';
-// import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const MoviesList = ({ list }: {list : Movie[]}) => {

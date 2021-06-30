@@ -23,7 +23,6 @@ const HeroSection: FC = () => {
   const toggleButton = () => {
     setTvIsSelected(!tvIsSelected);
   };
-
   const handleClick = () => {
     toggleButton();
   };
