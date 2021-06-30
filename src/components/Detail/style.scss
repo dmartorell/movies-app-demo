@@ -32,7 +32,8 @@
         padding: 0.5em 0;
     }
     &__rating {
-            max-width: 80px; 
+            max-width: 8%; 
+            min-width: 45px;
             padding: 0.3em 0;
     }
     .CircularProgressbar-path {
@@ -46,7 +47,7 @@
     &__info {
         @include flex-config(space-between, center);
         gap: 4em;
-        padding: 0.8em 0;
+        padding-bottom: 0.8em;
         text-align: center;
         .length-title, .year-title, .language-title {
             color: rgba($darkest-primary, 0.6);
@@ -64,10 +65,10 @@
     }
     .story-line-title {
         color: $darkest-primary;
-        font-size: 1.1em;
-        width: 450px;
-        padding-top: 1.2em;
-    }
+        font-size: 1em;
+        padding-bottom: 0.5em;
+        padding-top: 0.3em;
+        }
     .similar-title {
         padding-bottom: 0.5em;
     }
@@ -75,8 +76,7 @@
         color: rgba($darkest-primary, 0.6);
         font-size: 0.9em;
         font-weight: 600;
-        width: 450px;
+        width: 70%;
         padding-bottom: 1.5em;
-
     }
 }

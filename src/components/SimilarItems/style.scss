@@ -11,12 +11,18 @@
 .similar-list {
     @include flex-config(center, flex-start);
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     
     .similar-item {
         &__poster {
-            width: 120px;
-            height: auto;
+            width: 110px;
+            height: 160px;
+            border: 2px solid transparent;
+            transition: 200ms;
+            &:hover {
+                border: 2px solid $main-secondary;
+                transform: scale(1.1);
+            }
         }
         .similar-info {
             @include flex-config(space-between, flex-start, column);

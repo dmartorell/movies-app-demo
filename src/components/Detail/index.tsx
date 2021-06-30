@@ -21,7 +21,7 @@ const Detail = () => {
   useEffect(() => {
     dispatch((loadDetail({ id, type })));
     dispatch(loadSimilarItems({ id, type }));
-  }, []);
+  }, [id]);
 
   return (
     <>

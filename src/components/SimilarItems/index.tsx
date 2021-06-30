@@ -16,14 +16,15 @@ const SimilarItems = ({ data }: {data: Movie[]}) => {
       </h2>
       <ul className="similar-list">
         {
-          data?.length
-          && data.map((item : Movie) => (
-            <li className="similar-item" key={item.id}>
-              <Link to={`/${type}/${item.id}`}>
-                <img className="similar-item__poster" src={`${IMAGE_URL}${item.poster_path}`} alt="poster" />
-              </Link>
-            </li>
-          ))
+          data
+            ? data.map((item : Movie) => (
+              <li className="similar-item" key={item.id}>
+                <Link to={`/${type}/${item.id}`}>
+                  <img className="similar-item__poster" src={`${IMAGE_URL}${item.poster_path}`} alt="poster" />
+                </Link>
+              </li>
+            ))
+            : null
         }
       </ul>
     </section>
