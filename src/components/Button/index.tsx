@@ -5,7 +5,7 @@ import './style.scss';
 type ButtonProps = {
     className: string;
     children: React.ReactNode;
-    onClick: () => void;
+    onClick?: () => void;
     disabled: boolean;
   }
 

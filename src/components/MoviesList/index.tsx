@@ -1,9 +1,7 @@
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.scss';
 import Movie from '../../types/movie';
-// import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const MoviesList = ({ list }: {list : Movie[]}) => {
@@ -14,7 +12,7 @@ const MoviesList = ({ list }: {list : Movie[]}) => {
       <ul className="list">
         {
             list?.length
-            && list.map((item : any) => (
+            && list.map((item : Movie) => (
               <li className="list-item" key={item.id}>
                 <Link to={`/movie/${item.id}`}>
                   <img className="list-item__image" src={`${IMAGE_URL}${item.poster_path}`} alt="list-item-pic" />

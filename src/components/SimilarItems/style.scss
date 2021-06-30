@@ -1,0 +1,42 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.similar-title {
+    text-align: center;
+    color: $darkest-primary;
+    font-size: 1.1em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+}
+.similar-list {
+    @include flex-config(center, flex-start);
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    .similar-item {
+        &__poster {
+            width: 110px;
+            height: 160px;
+            border: 3px solid transparent;
+            transition: 200ms;
+            &:hover {
+                border: 3px solid $main-secondary;
+                transform: scale(1.1);
+            }
+        }
+        .similar-info {
+            @include flex-config(space-between, flex-start, column);
+            margin-right: auto;
+            &__title {
+                color: $darkest-primary;
+                font-size: 0.9em;
+                font-weight: bolder;
+            }
+            &__year {
+                color: rgba($darkest-primary, 0.6);
+                font-size: 0.9em;
+                font-weight: 600;
+            }
+        }
+    }
+}
