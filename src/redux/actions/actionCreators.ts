@@ -38,7 +38,7 @@ export function loadTvShows() {
     }
   };
 }
-export function loadDetail({ id, type = 'movie' } : {id: string, type : string}) {
+export function loadDetail({ id, type } : {id: string, type : string}) {
   return async (dispatch: Dispatch) => {
     try {
       const { data } = type === 'movie'
