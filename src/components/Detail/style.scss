@@ -3,11 +3,11 @@
 
 .detail {
     @include flex-config(space-between, center, column);
-    background: linear-gradient(to bottom, rgba(231, 240, 245, 0) 15%,rgba(255, 255, 255, 0.927) 100%);
+    background: linear-gradient(to bottom, rgba(45, 45, 45, 0) 15%,rgba(255, 255, 255, 0.968) 100%);
     position: relative;
     border-radius: 50px;
     border: 4px solid white;
-    margin: 5em auto;
+    margin: 2em auto 1em auto;
     max-width: 1000px; 
     padding: 5em 1em 2em 1em;
     &__background {
@@ -62,7 +62,7 @@
             text-transform: capitalize;
         }
     }
-    .story-line-title, .similar-title {
+    .story-line-title {
         color: $darkest-primary;
         font-size: 1.1em;
         width: 450px;
@@ -76,31 +76,7 @@
         font-size: 0.9em;
         font-weight: 600;
         width: 450px;
-    }
-    .similar-list {
-        @include flex-config(space-between, center, column);
-        
-        .similar-item {
-            @include flex-config(space-between, center);
-            width: 450px;
-            &__logo {
-                width: 70px;
-                height: 70px;
-            }
-            .similar-info {
-                @include flex-config(space-between, flex-start, column);
-                margin-right: auto;
-                &__title {
-                    color: $darkest-primary;
-                    font-size: 0.9em;
-                    font-weight: bolder;
-                }
-                &__year {
-                    color: rgba($darkest-primary, 0.6);
-                    font-size: 0.9em;
-                    font-weight: 600;
-                }
-            }
-        }
+        padding-bottom: 1.5em;
+
     }
 }
