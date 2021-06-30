@@ -28,7 +28,7 @@
     }
     &__title {
         color: $darkest-primary;
-        font-size: 1.3em;
+        font-size: 1.4em;
         padding: 0.5em 0;
     }
     &__rating {
@@ -63,12 +63,6 @@
             text-transform: capitalize;
         }
     }
-    .story-line-title {
-        color: $darkest-primary;
-        font-size: 1em;
-        padding-bottom: 0.5em;
-        padding-top: 0.3em;
-        }
     .similar-title {
         padding-bottom: 0.5em;
     }
@@ -77,6 +71,6 @@
         font-size: 0.9em;
         font-weight: 600;
         width: 70%;
-        padding-bottom: 1.5em;
+        padding: 1.5em 0;
     }
 }

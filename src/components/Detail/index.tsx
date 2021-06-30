@@ -62,9 +62,6 @@ const Detail = () => {
             </p>
           </li>
         </ul>
-        <h2 className="story-line-title">
-          Storyline
-        </h2>
         <p className="story-line-text">
           {selectedItem.overview}
         </p>

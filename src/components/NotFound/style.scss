@@ -1,2 +1,11 @@
 @import "../../styles/colors.scss";
 @import "../../styles/mixins.scss";
+
+.section-404 {
+    @include flex-config(space-between, center, column);
+    &__image {
+        max-width: 70%;
+    }
+
+
+}
