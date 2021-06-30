@@ -27,7 +27,7 @@ export function loadTvShows() {
       const { data } = await axios(`${POPULAR_TVSHOWS_URL}?api_key=${apiKey}`);
       dispatch({
         type: actionTypes.LOAD_TVSHOWS,
-        popularMovies: data,
+        popularTvShows: data,
       });
     } catch (error) {
       dispatch({

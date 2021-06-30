@@ -8,7 +8,7 @@ declare global {
       __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
     }
 }
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const configureStore = (initialState: any) => createStore(
   rootReducer,
   initialState,
