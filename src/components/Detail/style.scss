@@ -20,6 +20,16 @@
         top: 0;
         z-index: -1;
     }
+    &__go-back{
+        position: absolute;
+        cursor: pointer;
+        font-size: 0.9em;
+        top: 40px;
+        left: 20px;
+        width: 170px;
+        padding: 0.5em 2em;
+        
+    }
     &__poster {
         border-radius: 5%;
         max-width: 40%;

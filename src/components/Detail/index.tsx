@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { loadDetail, loadSimilarItems } from '../../redux/actions/actionCreators';
+import Button from '../Button';
 import getTypeFromLocation from '../../helpers/getTypeFromLocation';
 import getYearFromDate from '../../helpers/getYearFromDate';
 import Store from '../../types/store';
@@ -36,6 +37,8 @@ const Detail = () => {
         />
         )
       }
+        <Button className="detail__go-back main-btn" onClick={() => {}} disabled={false}>Back to List</Button>
+
         <img className="detail__poster" src={`${IMAGE_URL}${selectedItem.poster_path}`} alt="background-img" />
         <h1 className="detail__title">{selectedItem.title || selectedItem.name}</h1>
         <CircularProgressbar className="detail__rating" value={selectedItem.vote_average} maxValue={10} text={`${selectedItem.vote_average}`} />

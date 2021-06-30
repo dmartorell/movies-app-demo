@@ -12,7 +12,7 @@ const SimilarItems = ({ data }: {data: Movie[]}) => {
   return (
     <section>
       {
-        data.length
+        data?.length
           ? (
             <>
               <h2 className="similar-title">

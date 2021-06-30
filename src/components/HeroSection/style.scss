@@ -39,6 +39,7 @@
         .hero-image {
             object-fit: cover;
             max-width: 90%;
+            min-width: 350px;
         }  
     }
 }
