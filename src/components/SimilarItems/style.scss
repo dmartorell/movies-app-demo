@@ -17,10 +17,10 @@
         &__poster {
             width: 110px;
             height: 160px;
-            border: 2px solid transparent;
+            border: 3px solid transparent;
             transition: 200ms;
             &:hover {
-                border: 2px solid $main-secondary;
+                border: 3px solid $main-secondary;
                 transform: scale(1.1);
             }
         }
