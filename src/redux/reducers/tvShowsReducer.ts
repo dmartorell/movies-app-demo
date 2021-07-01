@@ -5,11 +5,9 @@ function tvShowsReducer(popularTvShows = [], action:
     {
         type: string, popularTvShows: PopularTvShows
     }) {
-  switch (action.type) {
-    case actionTypes.LOAD_TVSHOWS:
-      return action.popularTvShows;
-    default:
-      return popularTvShows;
+  if (action.type === actionTypes.LOAD_TVSHOWS) {
+    return action.popularTvShows;
   }
+  return popularTvShows;
 }
 export default tvShowsReducer;

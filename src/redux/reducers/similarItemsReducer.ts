@@ -5,11 +5,9 @@ function similarItemsReducer(
   similarItems = {},
   action: {type: string, similarItems: Movie[]},
 ) {
-  switch (action.type) {
-    case actionTypes.LOAD_SIMILAR:
-      return action.similarItems;
-    default:
-      return similarItems;
+  if (action.type === actionTypes.LOAD_SIMILAR) {
+    return action.similarItems;
   }
+  return similarItems;
 }
 export default similarItemsReducer;
