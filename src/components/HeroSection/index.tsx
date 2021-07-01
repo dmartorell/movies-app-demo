@@ -18,6 +18,7 @@ const HeroSection: FC = () => {
   useEffect(() => {
     dispatch(loadTvShows());
     dispatch(loadMovies());
+    window.scrollTo(0, 0);
   }, []);
 
   const toggleButton = () => {

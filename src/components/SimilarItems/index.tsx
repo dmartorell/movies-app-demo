@@ -10,7 +10,7 @@ const SimilarItems = ({ data }: {data: Movie[]}) => {
   const type = getTypeFromLocation();
 
   return (
-    <section>
+    <section className="similar-section">
       {
         data?.length
           ? (

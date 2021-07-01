@@ -38,3 +38,13 @@ nav {
     color: $dark-primary;
     font-size: 1.9em;
 }
+@media screen and (max-width: 690px) {
+    nav {
+        font-size: 0.7em;
+    }
+    .nav-list {
+        .nav-nested-list {
+            display: none;
+        }
+    }
+}

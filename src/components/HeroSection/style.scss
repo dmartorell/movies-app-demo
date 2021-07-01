@@ -39,7 +39,42 @@
         .hero-image {
             object-fit: cover;
             max-width: 90%;
-            min-width: 350px;
+            min-width: 310px;
         }  
+    }
+}
+@media screen and (max-width: 1000px) {
+    .container {
+        &__left-side {
+            .hero-title { 
+                font-size: 4.5em;
+            }
+            .hero-subtitle {
+                font-size: 1.4em;
+            }
+            .buttons {
+                width: 350px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 690px) {
+    .container {
+        &__left-side {
+            @include flex-config( center, center, column);
+            gap: 10px;
+            .hero-title { 
+                font-size: 3.5em;
+            }
+            .hero-subtitle {
+                display: none;
+            }
+            .buttons {
+                @include flex-config( center, center, column);
+            }
+        }
+        &__right-side {
+            display: none;
+        }
     }
 }

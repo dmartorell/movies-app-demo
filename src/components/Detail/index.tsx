@@ -22,6 +22,7 @@ const Detail = () => {
   useEffect(() => {
     dispatch((loadDetail({ id, type })));
     dispatch(loadSimilarItems({ id, type }));
+    window.scrollTo(0, 0);
   }, [id]);
 
   return (
