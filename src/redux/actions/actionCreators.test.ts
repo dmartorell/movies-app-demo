@@ -13,7 +13,7 @@ const mockedAxios = (axios as unknown as jest.Mock);
 
 describe('Given a loadMovies function', () => {
   describe('When invoked', () => {
-    test('It should return a list of popular movies', async () => {
+    test('It should dispatch LOAD_MOVIES', async () => {
       mockedAxios.mockResolvedValue({ data: {} });
       const dispatch = jest.fn();
       await loadMovies()(dispatch);
@@ -34,7 +34,7 @@ describe('Given a loadMovies function', () => {
 });
 describe('Given a loadTvShows function', () => {
   describe('When invoked', () => {
-    test('It should return a list of popular tv shows', async () => {
+    test('It should dispatch LOAD_TVSHOWS', async () => {
       mockedAxios.mockResolvedValue({ data: {} });
       const dispatch = jest.fn();
       await loadTvShows()(dispatch);
