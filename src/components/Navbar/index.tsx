@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 
 const Navbar = () => {
-  const personalLinkedin = 'https://www.linkedin.com/in/daniel-martorell/';
+  const personalLinkedin = 'https://github.com/dmartorell/movies-dev-challenge';
   return (
     <nav>
       <ul className="nav-list">
