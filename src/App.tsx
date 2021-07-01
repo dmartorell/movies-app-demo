@@ -16,8 +16,8 @@ function App() {
         <main className="main-container">
           <Switch>
             <Route exact path="/" component={HeroSection} />
-            <Route path="/movie/:id" component={Detail} />
-            <Route path="/tv/:id" component={Detail} />
+            <Route exact path="/movie/:id" component={Detail} />
+            <Route exact path="/tv/:id" component={Detail} />
             <Route component={NotFound} />
           </Switch>
         </main>
