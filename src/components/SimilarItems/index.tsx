@@ -5,7 +5,7 @@ import getTypeFromLocation from '../../helpers/getTypeFromLocation';
 
 import './style.scss';
 
-const SimilarItems = ({ data }: {data: Movie[]}) => {
+const SimilarItems = ({ data }: {data: Movie[] | undefined}) => {
   const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
   const type = getTypeFromLocation();
 
