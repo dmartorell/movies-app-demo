@@ -47,5 +47,26 @@
             cursor: pointer;
         }
     }
-    
+}
+@media screen and (max-width: 1000px) {
+    .list {
+        @include flex-config( space-between, flex-start);
+        flex-wrap: wrap;
+        margin-top: 3.5em;
+        .list-item {
+            &__image {
+                height: 150px;
+            }
+            &__info {
+                .info-title {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 690px) {
+    .list-item {
+        flex: 1 1 100px;
+    }
 }
