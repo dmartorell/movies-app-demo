@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Movie from '../../types/movie';
-import getTypeFromLocation from '../../helpers/getTypeFromLocation';
+import { getTypeFromLocation } from '../../helpers/commonHelpers';
 
 import './style.scss';
 

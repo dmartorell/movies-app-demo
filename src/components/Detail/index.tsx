@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { loadDetail, loadSimilarItems } from '../../redux/actions/actionCreators';
 import Button from '../Button';
-import getTypeFromLocation from '../../helpers/getTypeFromLocation';
-import getYearFromDate from '../../helpers/getYearFromDate';
+import { getTypeFromLocation, getYearFromDate, getAverageRunTime } from '../../helpers/commonHelpers';
 import Store from '../../types/store';
 import SimilarItems from '../SimilarItems';
 import 'react-circular-progressbar/dist/styles.css';
@@ -48,7 +47,7 @@ const Detail = () => {
           <li>
             <p className="length-title">Length</p>
             <p className="length">
-              {selectedItem.runtime || selectedItem.episode_run_time}
+              {selectedItem.runtime || getAverageRunTime(selectedItem.episode_run_time)}
               {' '}
               min
             </p>
