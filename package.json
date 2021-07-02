@@ -50,5 +50,11 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.7"
+  },
+  "jest": {
+    "watchPathIgnorePatterns": [
+      "<rootDir>/src/App.tsx",
+      "<rootDir>/src/index.tsx"
+    ]
   }
 }
