@@ -1,8 +1,7 @@
 
 # nonomo
 
-This is a fictional web app that offers video enterteinment. The project has been commitioned as a technical test.
-
+This is a fictional web app that offers video entertainment. The project has been commissioned as a technical test.
 Please be aware that some of the images used for the completion of the project might be copyrighted. 
 
 
