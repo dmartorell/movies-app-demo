@@ -2,7 +2,7 @@ import React, { useState, useEffect, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadMovies, loadTvShows } from '../../redux/actions/actionCreators';
 import Store from '../../types/store';
-import MediaItemList from '../MoviesList';
+import MediaItemList from '../List/List';
 
 import Button from '../Button';
 import './style.scss';
