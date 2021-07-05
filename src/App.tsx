@@ -13,7 +13,7 @@ function App() {
     <Provider store={configureStore({ popularMovies: String, popularTvShows: String })}>
       <BrowserRouter>
         <Navbar />
-        <main className="main-container">
+        <main>
           <Switch>
             <Route exact path="/" component={HeroSection} />
             <Route exact path="/movie/:id" component={Detail} />
