@@ -2,8 +2,7 @@ import React, { useState, useEffect, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadMovies, loadTvShows } from '../../redux/actions/actionCreators';
 import Store from '../../types/store';
-import TvShowsList from '../TvShowsList';
-import MoviesList from '../MoviesList';
+import MediaItemList from '../MoviesList';
 
 import Button from '../Button';
 import './style.scss';
@@ -82,8 +81,8 @@ const HeroSection: FC = () => {
       </section>
       {
           tvIsSelected
-            ? <TvShowsList list={tvShows} />
-            : <MoviesList list={movies} />
+            ? <MediaItemList list={tvShows} category="tv" />
+            : <MediaItemList list={movies} category="movie" />
         }
     </>
   );
