@@ -17,6 +17,7 @@ const Detail = () => {
   const dispatch = useDispatch();
   const type = getTypeFromLocation();
   const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
+  const defaultPoster = 'https://i.ibb.co/vYbnYLQ/Captura-de-pantalla-2021-07-05-a-las-21-52-36.jpg';
 
   useEffect(() => {
     dispatch((loadDetail({ id, type })));
@@ -27,20 +28,15 @@ const Detail = () => {
   return (
     <>
       <section className="detail">
-        {
-        selectedItem.backdrop_path
-        && (
         <img
           className="detail__background"
-          src={`${IMAGE_URL}${selectedItem.backdrop_path}`}
+          src={selectedItem.backdrop_path ? `${IMAGE_URL}${selectedItem.backdrop_path}` : defaultPoster}
           alt="background-img"
         />
-        )
-      }
         <Link to="/">
           <Button className="detail__go-back main-btn" disabled={false}>Back to List</Button>
         </Link>
-        <img className="detail__poster" src={`${IMAGE_URL}${selectedItem.poster_path}`} alt="background-img" />
+        <img className="detail__poster" src={selectedItem.poster_path ? `${IMAGE_URL}${selectedItem.poster_path}` : defaultPoster} alt="background-img" />
         <h1 className="detail__title">{selectedItem.title || selectedItem.name}</h1>
         <CircularProgressbar className="detail__rating" value={selectedItem.vote_average} maxValue={10} text={`${selectedItem.vote_average}`} />
         <ul className="detail__info">
