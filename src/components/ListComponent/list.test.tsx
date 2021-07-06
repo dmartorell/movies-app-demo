@@ -1,5 +1,5 @@
 import React from 'react';
-import MediaItemList from './List';
+import List from './ListComponent';
 import { render } from '../../utils/test-utils';
 
 describe('Given a MoviesList component', () => {
@@ -14,7 +14,7 @@ describe('Given a MoviesList component', () => {
       title: 'the title',
       vote_average: 1,
     }];
-    const { container } = render(<MediaItemList list={movies} category="movie" />);
+    const { container } = render(<List list={movies} category="movie" />);
     const chooseTag = container.querySelector('.info-title');
     expect(chooseTag?.textContent).toBe('the title');
   });

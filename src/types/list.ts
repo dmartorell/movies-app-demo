@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-interface MediaItem
+interface List
 {
     adult?: boolean,
     backdrop_path: string,
@@ -19,4 +19,4 @@ interface MediaItem
     vote_count?: number,
 }
 
-export default MediaItem;
+export default List;
