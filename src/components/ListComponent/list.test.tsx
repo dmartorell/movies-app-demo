@@ -1,5 +1,5 @@
 import React from 'react';
-import List from './ListComponent';
+import List from '.';
 import { render } from '../../utils/test-utils';
 
 describe('Given a MoviesList component', () => {

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter, Route, Switch, Redirect,
+} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import configureStore from './redux/store';
 import Landing from './components/Landing';
@@ -15,9 +17,13 @@ function App() {
         <Navbar />
         <main>
           <Switch>
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/movie" component={Landing} />
             <Route exact path="/movie/:id" component={Detail} />
+            <Route exact path="/" component={Landing}>
+              <Redirect to="/movie" />
+            </Route>
             <Route exact path="/tv/:id" component={Detail} />
+            <Route exact path="/tv/" component={Landing} />
             <Route component={NotFound} />
           </Switch>
         </main>
