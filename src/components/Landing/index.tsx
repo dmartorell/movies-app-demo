@@ -1,6 +1,8 @@
 import React, { useState, useEffect, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Switch, Route } from 'react-router-dom';
+import {
+  Link, Switch, Route, useRouteMatch,
+} from 'react-router-dom';
 import Store from '../../types/store';
 import HeroSection from '../HeroSection';
 import Button from '../Button';
@@ -9,7 +11,8 @@ import { loadMovies, loadTvShows } from '../../redux/actions/actionCreators';
 import './style.scss';
 
 const Landing: FC = () => {
-  const [tvIsSelected, setTvIsSelected] = useState(false);
+  const { path } = useRouteMatch();
+  const [tvIsSelected, setTvIsSelected] = useState(path === '/tv/');
   const dispatch = useDispatch();
   const movies = useSelector((store: Store) => store.popularMovies.results);
   const tvShows = useSelector((store: Store) => store.popularTvShows.results);
