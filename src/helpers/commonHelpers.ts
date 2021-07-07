@@ -3,6 +3,4 @@ export const getAverageRunTime = (times:number[]) => {
   return (sum / times?.length) || 'unknown';
 };
 
-export const getTypeFromLocation = () => window.location.pathname.split('/')[1];
-
 export const getYearFromDate = (date: string) => date && date.slice(0, 4);

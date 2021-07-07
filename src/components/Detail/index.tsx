@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, useRouteMatch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { loadDetail, loadSimilarItems } from '../../redux/actions/actionCreators';
 import Button from '../Button';
-import { getTypeFromLocation, getYearFromDate, getAverageRunTime } from '../../helpers/commonHelpers';
+import { getYearFromDate, getAverageRunTime } from '../../helpers/commonHelpers';
 import Store from '../../types/store';
 import SimilarItems from '../SimilarItems';
 import 'react-circular-progressbar/dist/styles.css';
@@ -16,14 +16,14 @@ const Detail = () => {
   const similarItems = useSelector((store: Store) => store?.similarItems?.results?.slice(0, 9));
   const dispatch = useDispatch();
   const history = useHistory();
-  const type = getTypeFromLocation();
+  const { url } = useRouteMatch();
+  const type = url.match(/movie/) ? 'movie' : 'tv';
   const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
   const defaultPoster = 'https://i.ibb.co/vYbnYLQ/Captura-de-pantalla-2021-07-05-a-las-21-52-36.jpg';
 
   useEffect(() => {
     dispatch((loadDetail({ id, type })));
     dispatch(loadSimilarItems({ id, type }));
-    window.scrollTo(0, 0);
   }, [id]);
 
   return (
