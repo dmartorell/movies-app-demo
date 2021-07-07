@@ -1,7 +1,9 @@
 import actionTypes from '../actions/actionTypes';
 import PopularMovies from '../../types/popularMovies';
 
-function moviesReducer(popularMovies = [], action: {type: string, popularMovies: PopularMovies}) {
+function moviesReducer(popularMovies = [] || null, action: {
+  type: string, popularMovies: PopularMovies
+}) {
   if (action.type === actionTypes.LOAD_MOVIES) {
     return action.popularMovies;
   }

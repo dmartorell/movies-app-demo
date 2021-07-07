@@ -20,8 +20,7 @@ const Landing: FC = () => {
   useEffect(() => {
     if (!movies?.length)dispatch(loadTvShows());
     if (!tvShows?.length)dispatch(loadMovies());
-    window.scrollTo(100, 100);
-  }, []);
+  });
 
   const toggleButton = () => {
     setTvIsSelected(!tvIsSelected);
