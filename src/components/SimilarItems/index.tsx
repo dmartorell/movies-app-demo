@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import List from '../../types/list';
-import { getTypeFromLocation } from '../../helpers/commonHelpers';
 
 import './style.scss';
 
 const SimilarItems = ({ data }: {data: List[] | undefined}) => {
   const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
-  const type = getTypeFromLocation();
-
+  const { url } = useRouteMatch();
+  const type = url.match(/movie/) ? 'movie' : 'tv';
   return (
     <section className="similar-section">
       {
