@@ -11,8 +11,8 @@
     .list-item {
         flex: 1 1 200px;
         background-color: $darkest-primary;
-        border-top-right-radius: 25px;
-        border-top-left-radius: 25px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
         text-align: center;
         transition: 150ms;
         &__image {

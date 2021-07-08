@@ -1,9 +1,9 @@
 import actionTypes from '../actions/actionTypes';
-import Movie from '../../types/movie';
+import List from '../../types/list';
 
 function similarItemsReducer(
   similarItems = {},
-  action: {type: string, similarItems: Movie[]},
+  action: {type: string, similarItems: List[]},
 ) {
   if (action.type === actionTypes.LOAD_SIMILAR) {
     return action.similarItems;

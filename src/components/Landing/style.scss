@@ -1,0 +1,20 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.buttons {
+    @include flex-config( flex-start, center);
+    gap: 1em;
+    margin: 1.2em 0;
+}
+@media screen and (max-width: 1500px) {
+   .buttons {
+    @include flex-config(center, center);
+   }
+}
+
+@media screen and (max-width: 690px) {
+    .buttons {
+        font-size: 0.9em;
+        min-width: 270px;
+    }
+}

@@ -19,6 +19,7 @@
             &__poster {
                 width: 110px;
                 height: 160px;
+                object-fit: cover;
                 border: 3px solid transparent;
                 transition: 200ms;
                 &:hover {

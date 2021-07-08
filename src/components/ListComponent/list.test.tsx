@@ -1,20 +1,20 @@
 import React from 'react';
-import TvShowsList from './index';
+import List from '.';
 import { render } from '../../utils/test-utils';
 
-describe('Given a TvShowsList component', () => {
+describe('Given a MoviesList component', () => {
   test('Then at leat one title should be rendered', () => {
-    const tvShows = [{
+    const movies = [{
       backdrop_path: '',
       id: 1,
       original_language: '',
       overview: '',
       poster_path: '',
-      first_air_date: '',
-      name: 'the title',
+      release_date: '',
+      title: 'the title',
       vote_average: 1,
     }];
-    const { container } = render(<TvShowsList list={tvShows} />);
+    const { container } = render(<List list={movies} category="movie" />);
     const chooseTag = container.querySelector('.info-title');
     expect(chooseTag?.textContent).toBe('the title');
   });

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, useHistory, useRouteMatch } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { loadDetail, loadSimilarItems } from '../../redux/actions/actionCreators';
 import Button from '../Button';
-import { getTypeFromLocation, getYearFromDate, getAverageRunTime } from '../../helpers/commonHelpers';
+import { getYearFromDate, getAverageRunTime } from '../../helpers/commonHelpers';
 import Store from '../../types/store';
 import SimilarItems from '../SimilarItems';
 import 'react-circular-progressbar/dist/styles.css';
@@ -15,32 +15,27 @@ const Detail = () => {
   const selectedItem = useSelector((store: Store) => store.selectedItem);
   const similarItems = useSelector((store: Store) => store?.similarItems?.results?.slice(0, 9));
   const dispatch = useDispatch();
-  const type = getTypeFromLocation();
+  const history = useHistory();
+  const { url } = useRouteMatch();
+  const type = url.match(/movie/) ? 'movie' : 'tv';
   const IMAGE_URL = 'https://image.tmdb.org/t/p/original/';
+  const defaultPoster = 'https://i.ibb.co/vYbnYLQ/Captura-de-pantalla-2021-07-05-a-las-21-52-36.jpg';
 
   useEffect(() => {
     dispatch((loadDetail({ id, type })));
     dispatch(loadSimilarItems({ id, type }));
-    window.scrollTo(0, 0);
   }, [id]);
 
   return (
     <>
       <section className="detail">
-        {
-        selectedItem.backdrop_path
-        && (
         <img
           className="detail__background"
-          src={`${IMAGE_URL}${selectedItem.backdrop_path}`}
+          src={selectedItem.backdrop_path ? `${IMAGE_URL}${selectedItem.backdrop_path}` : defaultPoster}
           alt="background-img"
         />
-        )
-      }
-        <Link to="/">
-          <Button className="detail__go-back main-btn" disabled={false}>Back to List</Button>
-        </Link>
-        <img className="detail__poster" src={`${IMAGE_URL}${selectedItem.poster_path}`} alt="background-img" />
+        <Button className="detail__go-back main-btn" disabled={false} onClick={() => history.push(`/${type}`)}>Back to List</Button>
+        <img className="detail__poster" src={selectedItem.poster_path ? `${IMAGE_URL}${selectedItem.poster_path}` : defaultPoster} alt="background-img" />
         <h1 className="detail__title">{selectedItem.title || selectedItem.name}</h1>
         <CircularProgressbar className="detail__rating" value={selectedItem.vote_average} maxValue={10} text={`${selectedItem.vote_average}`} />
         <ul className="detail__info">
