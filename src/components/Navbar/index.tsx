@@ -4,11 +4,14 @@ import './style.scss';
 
 const Navbar = () => {
   const personalLinkedin = 'https://github.com/dmartorell/movies-dev-challenge';
+  const handleClick = () => {
+    window.localStorage.setItem('YscrollPosition', '0');
+  };
   return (
     <nav>
       <ul className="nav-list">
         <li className="nav-list__item">
-          <Link className="logo" to="/">
+          <Link onClick={handleClick} className="logo" to="/">
             nonomo
           </Link>
         </li>
